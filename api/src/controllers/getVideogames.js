@@ -1,7 +1,31 @@
-const getVideogames = (req, res) => {
+require("dotenv").config();
+const { API_KEY } = process.env;
+const { Videogame, Genre } = require("../db");
+const axios = require("axios");
+
+const getVideogames = async (req, res) => {
   try {
-    res.send("Get all videogames");
-  } catch (error) {}
+    //   Busco todos los usuarios de la db
+    const databaseVideogames = await Videogame.findAll({
+      include: {
+        model: Genre,
+        attributes: ["Genero"],
+        through: { attributes: [] },
+      },
+    });
+
+    //Busco todos los usuarios de la api
+    const { data } = await axios.get(
+      `https://api.rawg.io/api/games?key=${API_KEY}`
+    );
+    const apiVideogames = data.results;
+
+    const allVideogames = [...databaseVideogames, ...apiVideogames];
+
+    res.status(200).json(allVideogames);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };
 
 module.exports = getVideogames;

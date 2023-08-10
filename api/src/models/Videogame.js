@@ -16,7 +16,7 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      Descripción: {
+      Descripcion: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -27,7 +27,7 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
       },
       FechaLanzamiento: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
       },
       Rating: {
         type: DataTypes.INTEGER,

@@ -1,0 +1,26 @@
+GET http://localhost:3001/genres
+
+###
+
+GET http://localhost:3001/videogamesname?name=Counter Strike
+
+###
+
+GET http://localhost:3001/videogames
+
+###
+
+GET http://localhost:3001/videogames/7
+
+###
+
+POST http://localhost:3001/videogames
+Content-Type: application/json 
+
+{"Nombre":"Wild Rift",
+"Descripcion":"Un juego vicioso", 
+"Plataformas":"Android e ios", "Imagen":"bhiobhiobuyhiobuhyio.jpg", 
+"Rating":"5",
+"FechaLanzamiento":"15/05/2019",
+"Genero":["Action"]
+}

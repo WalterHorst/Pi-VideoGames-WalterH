@@ -11,7 +11,7 @@ module.exports = (sequelize) => {
         primaryKey: true,
         allowNull: false,
       },
-      Nombre: {
+      Genero: {
         type: DataTypes.STRING,
         allowNull: false,
       },

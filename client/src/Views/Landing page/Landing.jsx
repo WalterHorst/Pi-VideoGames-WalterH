@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const Landing = () => {
   return (
     <div>
-      <h1>Este es el componente Landing</h1>
+      <Link to={"/home"}> Entrar </Link>
     </div>
   );
 };

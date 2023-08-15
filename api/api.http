@@ -2,7 +2,8 @@ GET http://localhost:3001/genres
 
 ###
 
-GET http://localhost:3001/videogamesname?name=Counter Strike
+GET http://localhost:3001/videogamesname?name=
+
 
 ###
 

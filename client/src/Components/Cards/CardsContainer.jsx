@@ -1,13 +1,10 @@
 import "./CardsContainer.css";
 import Card from "../Card/Card";
-import { useSelector } from "react-redux";
 
-const CardsContainer = () => {
-  const videogames = useSelector((state) => state.videogames);
-
+const CardsContainer = ({ allVideogames }) => {
   return (
     <div className="Container">
-      {videogames.map((videogame) => {
+      {allVideogames.map((videogame) => {
         return (
           <Card
             key={videogame.id}

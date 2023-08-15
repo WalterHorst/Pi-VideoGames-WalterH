@@ -9,7 +9,7 @@ const getByName = async (req, res) => {
 
   try {
     //Busco en la bdd
-    const dbByname = await Videogame.findall({
+    const dbByname = await Videogame.findAll({
       where: {
         Nombre: {
           [Op.iLike]: `%${name}%`,
@@ -25,7 +25,14 @@ const getByName = async (req, res) => {
     const { data } = await axios.get(
       `https://api.rawg.io/api/games?key=${API_KEY}&search=${name}`
     );
-    const apiByName = data.results;
+    const apiByName = data.results.map((videogame) => {
+      return {
+        id: videogame.id,
+        name: videogame.name,
+        background_image: videogame.background_image,
+        genres: videogame.genres,
+      };
+    });
 
     const videogameByName = [...dbByname, ...apiByName];
     if (videogameByName.length === 0) {

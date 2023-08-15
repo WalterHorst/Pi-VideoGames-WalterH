@@ -5,6 +5,9 @@ import { getVideogames } from "../../Redux/Actions";
 
 const Home = () => {
   const videogames = useSelector((state) => state.videogames);
+  const search = useSelector((state) => state.searchVideogame);
+
+  const allVideogames = search.length !== 0 ? search : videogames;
 
   const dispatch = useDispatch();
 
@@ -16,7 +19,7 @@ const Home = () => {
 
   return (
     <div>
-      <CardsContainer></CardsContainer>
+      <CardsContainer allVideogames={allVideogames}></CardsContainer>
     </div>
   );
 };

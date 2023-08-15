@@ -1,7 +1,36 @@
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import "./Detail.css";
+
+import axios from "axios";
+
 const Detail = () => {
+  const { id } = useParams();
+
+  const [Videogame, setVideogame] = useState({});
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3001/videogames/${id}`)
+      .then(({ data }) => {
+        setVideogame(data);
+      })
+      .catch((error) => {
+        alert("Error al obtener los detalles de videogame:", error);
+      });
+  }, [id]);
+
   return (
-    <div>
-      <h1>Este es el componente Detail</h1>
+    <div className="detailContainer">
+      <div className="detail">
+        <h1>{Videogame.Nombre}</h1> <span> ID:{Videogame.id}</span>
+        <h3>{Videogame.Descripcion}</h3>
+        <h3>Lanzamiento: {Videogame.FechaLanzamiento}</h3>
+        <h3>Rating: {Videogame.Rating}</h3>
+        <h3>Genero: {Videogame.Generos}</h3>
+        <h3>Plataformas: {Videogame.Plataformas}</h3>
+        <img src={Videogame.Imagen} alt={Videogame.Nombre} />
+      </div>
     </div>
   );
 };

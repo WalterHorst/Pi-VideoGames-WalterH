@@ -3,6 +3,12 @@ const { API_KEY } = process.env;
 const axios = require("axios");
 const { Videogame } = require("../db");
 
+const removeHTMLTags = (text) => {
+  // Expresión regular para buscar y eliminar las etiquetas HTML
+  const regex = /(<([^>]+)>)/gi;
+  return text.replace(regex, "");
+};
+
 const getByID = async (req, res) => {
   const { id } = req.params;
   try {
@@ -18,7 +24,16 @@ const getByID = async (req, res) => {
         `https://api.rawg.io/api/games/${id}?key=${API_KEY}`
       );
 
-      const videogameByID = data;
+      const videogameByID = {
+        id: data.id,
+        Nombre: data.name,
+        Plataformas: data.platforms?.map((p) => p.platform.name).join(", "),
+        Descripcion: removeHTMLTags(data.description),
+        FechaLanzamiento: data.released,
+        Rating: data.rating,
+        Generos: data.genres?.map((g) => g.name).join(", "),
+        Imagen: data.background_image,
+      };
 
       res.status(200).json(videogameByID);
     }

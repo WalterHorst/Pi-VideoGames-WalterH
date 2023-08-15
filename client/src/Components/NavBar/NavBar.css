@@ -1,0 +1,29 @@
+/* .NavBar{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(21, 179, 179);
+    border: solid;
+} */
+
+  /* Estilos de la NavBar */
+  .NavBar {
+    background-color:#268983c0; /* Color de fondo de la NavBar */
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    height: 60px; /* Altura de la NavBar */
+  }
+  
+  /* Estilos de los enlaces (links) en la NavBar */
+  .NavBar a {
+    color: #ffffff; /* Color del texto de los enlaces */
+    text-decoration: none;
+    padding: 0 20px; /* Espacio interno (padding) en los enlaces */
+    font-size: 1.2rem; /* Tamaño del texto de los enlaces */
+  }
+  
+  /* Estilos para cambiar el color del enlace activo (cuando se hace clic en él) */
+  .NavBar a.active {
+    color: #ff6600; /* Color del enlace activo */
+    font-weight: bold; /* Texto en negrita para el enlace activo */
+  }

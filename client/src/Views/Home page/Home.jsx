@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import CardsContainer from "../../Components/Cards/CardsContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { getVideogames } from "../../Redux/Actions";
@@ -8,7 +8,7 @@ const Home = () => {
 
   const dispatch = useDispatch();
 
-  useState(() => {
+  useEffect(() => {
     if (videogames.length === 0) {
       dispatch(getVideogames());
     }

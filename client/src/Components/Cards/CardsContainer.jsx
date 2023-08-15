@@ -14,7 +14,7 @@ const CardsContainer = () => {
             id={videogame.id}
             image={videogame.background_image}
             nombre={videogame.name}
-            genre={videogame.genres.map((g) => g.name)}
+            genre={videogame.genres.map((g) => g.name).join(", ")}
           />
         );
       })}

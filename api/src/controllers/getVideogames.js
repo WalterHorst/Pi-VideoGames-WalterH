@@ -16,7 +16,7 @@ const getVideogames = async (req, res) => {
 
     //Busco todos los usuarios de la api
     const { data } = await axios.get(
-      `https://api.rawg.io/api/games?key=${API_KEY}`
+      `https://api.rawg.io/api/games?key=${API_KEY}&page_size=100`
     );
     const apiVideogames = data.results;
 

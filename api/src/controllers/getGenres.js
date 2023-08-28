@@ -21,7 +21,7 @@ const getGenres = async (req, res) => {
       });
     });
 
-    res.status(200).send("Poderes cargados en base de datos");
+    res.status(200).send("Generos cargados en base de datos");
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

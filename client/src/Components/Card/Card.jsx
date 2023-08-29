@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Card.css";
 
 const Card = ({ id, image, nombre, genre }) => {

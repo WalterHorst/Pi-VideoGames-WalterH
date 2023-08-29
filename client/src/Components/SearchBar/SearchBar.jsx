@@ -18,11 +18,11 @@ const Search = () => {
 
   const handleSearch = () => {
     const found = allVideogames.filter((videogames) =>
-      videogames.name.toLowerCase().includes(search.toLowerCase())
+      videogames.nombre.toLowerCase().includes(search.toLowerCase())
     );
     dispatch(searchVideogame(found));
   };
-
+  console.log(search);
   return (
     <div className="search-container">
       <div className="search-bar">

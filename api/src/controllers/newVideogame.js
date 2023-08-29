@@ -23,7 +23,6 @@ const newVideogame = async (req, res) => {
       let genresDB = await Genre.findAll({ where: { Genero: g } });
       await newVideogame.addGenre(genresDB);
     });
-
     res.status(201).json(newVideogame);
   } catch (error) {
     res.status(400).json({ error: error.message });

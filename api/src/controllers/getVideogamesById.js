@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { API_KEY } = process.env;
 const axios = require("axios");
-const { Videogame } = require("../db");
+const { Videogame, Genre } = require("../db");
 
 const removeHTMLTags = (text) => {
   // Expresión regular para buscar y eliminar las etiquetas HTML
@@ -14,7 +14,13 @@ const getByID = async (req, res) => {
   try {
     // busco en la bdd si el id es uuid
     if (isNaN(id)) {
-      const dbVideogame = await Videogame.findByPk(id);
+      const dbVideogame = await Videogame.findByPk(id, {
+        include: {
+          model: Genre,
+          attributes: ["Genero"],
+          through: { attributes: [] },
+        },
+      });
       if (!dbVideogame) {
         res.status(404).send("No se escuentra en la base de datos");
       } else return res.status(200).json(dbVideogame);

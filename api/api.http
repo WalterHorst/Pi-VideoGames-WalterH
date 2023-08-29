@@ -11,7 +11,7 @@ GET http://localhost:3001/videogames
 
 ###
 
-GET http://localhost:3001/videogames/7
+GET http://localhost:3001/videogames/7b7e4e5b-da42-43ba-8d5a-a0cb4e5463ee
 
 ###
 
@@ -23,5 +23,5 @@ Content-Type: application/json
 "Plataformas":"Android e ios", "Imagen":"bhiobhiobuyhiobuhyio.jpg", 
 "Rating":"5",
 "FechaLanzamiento":"15/05/2019",
-"Genero":["Action"]
+"Genero":["Action","Shooter"]
 }

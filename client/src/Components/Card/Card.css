@@ -23,3 +23,8 @@
    max-width: 100%;
    height: auto;
  }
+
+ .CardLink {
+  text-decoration: none;
+  color: inherit;
+}

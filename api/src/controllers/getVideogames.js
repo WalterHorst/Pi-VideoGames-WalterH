@@ -13,14 +13,28 @@ const getVideogames = async (req, res) => {
         through: { attributes: [] },
       },
     });
-
+    const databaseVideogamesFiltered = databaseVideogames?.map((game) => {
+      return {
+        id: game.ID,
+        image: game.Imagen,
+        nombre: game.Nombre,
+        genre: game.Genres?.map((g) => g.Genero).join(", "),
+      };
+    });
     //Busco todos los usuarios de la api
     const { data } = await axios.get(
       `https://api.rawg.io/api/games?key=${API_KEY}&page_size=100`
     );
-    const apiVideogames = data.results;
+    const apiVideogames = data.results.map((game) => {
+      return {
+        id: game.id,
+        image: game.background_image,
+        nombre: game.name,
+        genre: game.genres?.map((g) => g.name).join(", "),
+      };
+    });
 
-    const allVideogames = [...databaseVideogames, ...apiVideogames];
+    const allVideogames = [...databaseVideogamesFiltered, ...apiVideogames];
 
     res.status(200).json(allVideogames);
   } catch (error) {

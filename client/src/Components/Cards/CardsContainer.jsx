@@ -9,9 +9,9 @@ const CardsContainer = ({ allVideogames }) => {
           <Card
             key={videogame.id}
             id={videogame.id}
-            image={videogame.background_image}
-            nombre={videogame.name}
-            genre={videogame.genres.map((g) => g.name).join(", ")}
+            image={videogame.image}
+            nombre={videogame.nombre}
+            genre={videogame.genre}
           />
         );
       })}

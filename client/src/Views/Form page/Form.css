@@ -38,7 +38,7 @@ textarea {
   width: 100%;
 }
 
-button {
+.form-button {
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -49,11 +49,11 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+.form-button:hover {
   background-color: #0056b3;
 }
 
-button:disabled {
+.form-button:disabled {
   background-color: gray;
   color: white;
   cursor: not-allowed;

@@ -1,0 +1,26 @@
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .botton-page {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .botton-page:hover {
+    background-color: #ddd;
+  }
+  

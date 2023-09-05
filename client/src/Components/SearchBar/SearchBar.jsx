@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { searchVideogame } from "../../Redux/Actions";
 import "./SearchBar.css";
 
-//Primera forma buscar en el stado general
+// Primera forma buscar en el stado general
 
 const Search = () => {
   const allVideogames = useSelector((state) => state.videogames);
@@ -16,13 +16,17 @@ const Search = () => {
     handleSearch();
   };
 
+  useEffect(() => {
+    handleSearch();
+  }, [search]); // Ejecutar la búsqueda cuando 'search' cambie para evitar desfasaje
+
   const handleSearch = () => {
     const found = allVideogames.filter((videogames) =>
       videogames.nombre.toLowerCase().includes(search.toLowerCase())
     );
     dispatch(searchVideogame(found));
   };
-  console.log(search);
+
   return (
     <div className="search-container">
       <div className="search-bar">
@@ -52,6 +56,10 @@ export default Search;
 //     search.length ? handleSearch() : setDataSearch([]);
 //   };
 
+//   useEffect(() => {
+//     handleSearch();
+//   }, [search]); // Ejecutar la búsqueda cuando 'search' cambie para evitar desfasaje
+
 //   const handleSearch = async () => {
 //     try {
 //       const { data } = await axios.get(
@@ -78,3 +86,5 @@ export default Search;
 //     </div>
 //   );
 // };
+
+// export default Search;

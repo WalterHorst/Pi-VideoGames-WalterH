@@ -2,6 +2,7 @@ import axios from "axios";
 export const GET_VIDEOGAMES = "GET_VIDEOGAMES";
 export const GET_GENRES = "GET_GENRES";
 export const SEARCH = "SEARCH";
+export const SET_PAGE = "SET_PAGE";
 
 export const getVideogames = () => {
   return async (dispatch) => {
@@ -24,3 +25,8 @@ export const getGenres = () => {
     dispatch({ type: GET_GENRES, payload: apiGenres });
   };
 };
+
+export const setPage = (pageNumber) => ({
+  type: SET_PAGE,
+  payload: pageNumber,
+});

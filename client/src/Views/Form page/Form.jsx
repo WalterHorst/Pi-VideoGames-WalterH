@@ -154,7 +154,7 @@ const Form = () => {
           <img src={form.Imagen} alt={form.Nombre} className="imagePreview" />
         )}
       </div>
-      <button type="submit" disabled={!isFormValid()}>
+      <button className="form-button" type="submit" disabled={!isFormValid()}>
         Crear Juego
       </button>
     </form>

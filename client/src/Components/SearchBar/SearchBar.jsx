@@ -7,7 +7,7 @@ import "./SearchBar.css";
 // Primera forma buscar en el stado general
 
 const Search = () => {
-  const allVideogames = useSelector((state) => state.videogames);
+  const allVideogames = useSelector((state) => state.backup);
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
 

@@ -19,6 +19,7 @@ const getVideogames = async (req, res) => {
         image: game.Imagen,
         nombre: game.Nombre,
         genre: game.Genres?.map((g) => g.Genero).join(", "),
+        rating: game.Rating,
       };
     });
     //Busco todos los usuarios de la api
@@ -31,6 +32,7 @@ const getVideogames = async (req, res) => {
         image: game.background_image,
         nombre: game.name,
         genre: game.genres?.map((g) => g.name).join(", "),
+        rating: game.rating,
       };
     });
 

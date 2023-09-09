@@ -2,9 +2,11 @@ import { useState } from "react";
 import "./Form.css";
 import validate from "../../validations";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getVideogames } from "../../Redux/Actions";
 
 const Form = () => {
+  const dispatch = useDispatch();
   const genres = useSelector((state) => state.genres);
   const [form, setForm] = useState({
     Nombre: "",
@@ -15,7 +17,6 @@ const Form = () => {
     Imagen: null,
     Genero: [],
   });
-  console.log(form);
 
   const [errors, setErrors] = useState({
     Nombre: "",
@@ -46,7 +47,7 @@ const Form = () => {
 
   const setFile = (event) => {
     const file = event.target.files[0];
-    console.log(event.target.files);
+
     setForm({ ...form, Imagen: URL.createObjectURL(file) });
   };
 
@@ -67,10 +68,11 @@ const Form = () => {
   //funcion que previene el comportamiento default del submit (recargado de pagina) y hace la peticion post al backend
   const submitHandler = (event) => {
     event.preventDefault();
+    dispatch(getVideogames());
 
     axios
       .post("http://localhost:3001/videogames", form)
-      .then((res) => alert(res.data))
+      .then((res) => alert("Videogame creado exitosamente!"))
       .catch((error) => alert(error));
 
     setForm({
@@ -126,29 +128,31 @@ const Form = () => {
       </div>
       <div className="container">
         <input
-          type="text"
+          type="date"
           placeholder="FechaLanzamiento"
           value={form.FechaLanzamiento}
           name="FechaLanzamiento"
           onChange={changeHandler}
         ></input>
       </div>
-      <div className="container">
+      <div className="checkbox-container">
         {/* Renderizar checkboxes para cada genre */}
         {genres.map((genre) => (
-          <label key={genre.ID}>
-            <input
-              type="checkbox"
-              value={genre.Genero}
-              checked={selectedgenres.includes(genre.Genero)} // Marcar como seleccionado si está en la lista de generos seleccionadas
-              name="Genero"
-              onChange={checkboxChangeHandler}
-            />
-            {genre.Genero}
-          </label>
+          <div key={genre.ID} className="checkbox-column">
+            <label className="checkbox-label">
+              <input
+                type="checkbox"
+                value={genre.Genero}
+                checked={selectedgenres.includes(genre.Genero)} // Marcar como seleccionado si está en la lista de generos seleccionadas
+                name="Genero"
+                onChange={checkboxChangeHandler}
+              />
+              {genre.Genero}
+            </label>
+          </div>
         ))}
       </div>
-      <div className="checkBox">
+      <div>
         <input type="file" name="Imagen" onChange={setFile}></input>
         {form.Imagen && (
           <img src={form.Imagen} alt={form.Nombre} className="imagePreview" />

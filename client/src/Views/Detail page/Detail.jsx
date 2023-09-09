@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./Detail.css";
-
 import axios from "axios";
+import Loader from "../../Components/Loader/Loader";
 
 const Detail = () => {
   const { id } = useParams();
@@ -20,6 +20,9 @@ const Detail = () => {
       });
   }, [id]);
 
+  if (!Videogame.id) {
+    return <Loader></Loader>;
+  }
   return (
     <div className="detailContainer">
       <div className="detail">

@@ -1,34 +1,27 @@
-
-.detailContainer{
+.detailContainer {
     display: flex;
     justify-content: center;
     margin-top: 40px;
-}
-
-
-.detail{
+  }
+  
+  .detail {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: flex-start;
-    justify-content: flex-start;
     align-items: center;
- 
-     width: 1500px;
-     height: 500px;
-     background-color: rgba(93, 93, 151, 0.747);
-     border-radius: 8px;
-     margin: 10px;
-     box-shadow: 0 0 12px #d7d7d7;
-     padding: 0.1rem;
-     font-family: Verdana, Geneva, Tahoma, sans-serifs;
-     font-size:x-small;
- }
- img{
-     
-  display: block;
-   max-width: 100%;
-   height: auto;
- }
-
- 
+    max-width: 100%; /* Cambiamos el ancho máximo para que se ajuste al contenedor */
+    height: auto; /* Cambiamos la altura para que se ajuste al contenido */
+    background-color: rgba(93, 93, 151, 0.747);
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 0 12px #d7d7d7;
+    padding: 1rem; /* Aumentamos el espacio interior */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small; /* Cambiamos a "small" para mejorar la legibilidad */
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px; /* Agregamos margen inferior a la imagen */
+  }
+  

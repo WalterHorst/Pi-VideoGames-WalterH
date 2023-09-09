@@ -21,9 +21,19 @@ const getByID = async (req, res) => {
           through: { attributes: [] },
         },
       });
+      const dbFiltered = {
+        id: dbVideogame.ID,
+        Nombre: dbVideogame.Nombre,
+        Plataformas: dbVideogame.Plataformas,
+        Descripcion: dbVideogame.Description,
+        FechaLanzamiento: dbVideogame.FechaLanzamiento,
+        Rating: dbVideogame.Rating,
+        Generos: dbVideogame.Genres?.map((g) => g.Genero).join(", "),
+        Imagen: dbVideogame.Imagen,
+      };
       if (!dbVideogame) {
         res.status(404).send("No se escuentra en la base de datos");
-      } else return res.status(200).json(dbVideogame);
+      } else return res.status(200).json(dbFiltered);
     } // caso contrario busco en la api
     else {
       const { data } = await axios.get(

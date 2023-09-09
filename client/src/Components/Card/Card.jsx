@@ -3,13 +3,13 @@ import "./Card.css";
 
 const Card = ({ id, image, nombre, genre }) => {
   return (
-    <NavLink to={`/detail/${id}`} className="CardLink">
-      <div className="Card">
-        {nombre}
-        <p>Genero:{genre}</p>
+    <div className="Card">
+      {nombre}
+      <p>Genero:{genre}</p>
+      <NavLink to={`/detail/${id}`} className="CardLink">
         <img src={image} alt={nombre} />
-      </div>
-    </NavLink>
+      </NavLink>
+    </div>
   );
 };
 export default Card;

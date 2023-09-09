@@ -3,6 +3,7 @@ import CardsContainer from "../../Components/Cards/CardsContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { getVideogames, getGenres, setPage } from "../../Redux/Actions";
 import "./Home.css";
+import Loader from "../../Components/Loader/Loader";
 
 const Home = () => {
   const videogames = useSelector((state) => state.videogames);
@@ -40,7 +41,9 @@ const Home = () => {
       dispatch(setPage(currentPage + 1));
     }
   };
-
+  if (videogames.length === 0) {
+    return <Loader></Loader>;
+  }
   return search.length !== 0 && search.length < 15 ? (
     <div>
       <CardsContainer allVideogames={search}></CardsContainer>

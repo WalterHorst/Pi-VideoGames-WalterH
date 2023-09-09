@@ -1,89 +1,81 @@
-/* Form.css */
+form {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  max-width: 500px;
+  border: 1px solid #702e87;
+  background-color: rgba(41, 75, 144, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  padding-right: 40px; /* Agregamos un poco de espacio interno al formulario */
+}
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff92;
-  border-radius: 8px;
-  box-shadow: 0 0 12px #d7d7d7;
-  padding: 20px;
-  max-width: 400px;
-  width: 100%;
+  margin-bottom: 15px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #ffffff00;
-  font-family: Arial, sans-serif;
-}
-
-label {
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="number"],
-textarea {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-  width: 100%;
-}
-
-.form-button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.container input {
   font-size: 16px;
-  transition: background-color 0.3s;
+  color:white ;
+  background-color: rgba(146, 152, 164, 0.5);
+  width: 100%;
+  border: 1px unset #8a3434;
+  border-radius: 4px;
+  padding: 10px; /* Añadimos un poco de espacio interno a los campos de entrada */
 }
 
-.form-button:hover {
-  background-color: #0056b3;
+.container input:focus {
+  border-color: #2b8e15;
+  outline: none;
 }
 
-.form-button:disabled {
-  background-color: gray;
-  color: white;
-  cursor: not-allowed;
+.container input::placeholder {
+  color: #ffffff;
 }
 
-.parrafo3 {
-  color: #ff0000;
-  font-size: 10px;
-}
 
-.checkBox {
+
+.checkbox-container {
+  color: #fff;
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  justify-content: space-between; /* Para que los grupos de checkboxes se distribuyan horizontalmente */
+  margin-bottom: 20px; /* Espacio entre los grupos de checkboxes y el botón */
 }
 
-.checkBox label {
+.checkbox-column {
+  flex-basis: calc(33% - 10px); /* Divide en columnas de 4 con un espacio de 10px */
+  margin-bottom: 10px; /* Espacio entre las filas de checkboxes */
+}
+
+.checkbox-label {
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 16px;
 }
 
-.checkBox input[type="checkbox"] {
+input[type="checkbox"] {
   margin-right: 5px;
 }
 
-.imagePreview {
-  max-width: 100px;
-  max-height: 100px;
-  border: 1px solid #ccc;
+.form-button[type="submit"] {
+  display: flex;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
   border-radius: 4px;
-  margin-top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: auto;
+  align-items: center;
+}
+
+.form-button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.parrafo3 {
+  color: #f30808;
 }

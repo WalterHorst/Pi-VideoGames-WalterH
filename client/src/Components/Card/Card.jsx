@@ -4,7 +4,7 @@ import "./Card.css";
 const Card = ({ id, image, nombre, genre }) => {
   return (
     <div className="Card">
-      {nombre}
+      <h4>{nombre}</h4>
       <p>Genero:{genre}</p>
       <NavLink to={`/detail/${id}`} className="CardLink">
         <img src={image} alt={nombre} />

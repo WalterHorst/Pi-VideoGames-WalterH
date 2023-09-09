@@ -23,10 +23,24 @@ const getVideogames = async (req, res) => {
       };
     });
     //Busco todos los usuarios de la api
-    const { data } = await axios.get(
-      `https://api.rawg.io/api/games?key=${API_KEY}&page_size=100`
-    );
-    const apiVideogames = data.results.map((game) => {
+    const response1 = (
+      await axios.get(
+        `https://api.rawg.io/api/games?key=${API_KEY}&page_size=100&page=1`
+      )
+    ).data.results;
+    const response2 = (
+      await axios.get(
+        `https://api.rawg.io/api/games?key=${API_KEY}&page_size=100&page=2`
+      )
+    ).data.results;
+    const response3 = (
+      await axios.get(
+        `https://api.rawg.io/api/games?key=${API_KEY}&page_size=100&page=3`
+      )
+    ).data.results;
+
+    const allResponses = [...response1, ...response2, ...response3];
+    const apiVideogames = allResponses.map((game) => {
       return {
         id: game.id,
         image: game.background_image,

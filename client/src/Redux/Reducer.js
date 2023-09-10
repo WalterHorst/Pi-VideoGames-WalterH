@@ -108,24 +108,26 @@ const reducer = (state = initialState, { type, payload }) => {
         return state;
       }
 
-      const searchVideogameFilteredByGenre = [
-        ...state.searchVideogameBackup,
-      ].filter((vg) => {
-        const genres = vg.genre.split(", ");
-        return genres.includes(genreToFilter);
-      });
+      if (state.searchVideogame.length !== 0) {
+        const searchVideogameFilteredByGenre = [
+          ...state.searchVideogameBackup,
+        ].filter((vg) => {
+          const genres = vg.genre.split(", ");
+          return genres.includes(genreToFilter);
+        });
 
-      if (searchVideogameFilteredByGenre.length === 0) {
-        alert(
-          "No se encontraron coincidencias para este género en la búsqueda."
-        );
-        return state;
+        if (searchVideogameFilteredByGenre.length === 0) {
+          alert(
+            "No se encontraron coincidencias para este género en la búsqueda."
+          );
+          return state;
+        }
+        return { ...state, searchVideogame: searchVideogameFilteredByGenre };
       }
 
       return {
         ...state,
         videogames: videogamesFilteredByGenre,
-        searchVideogame: searchVideogameFilteredByGenre,
       };
     case ORDER_FROM:
       const copy5 = [...state.backup];

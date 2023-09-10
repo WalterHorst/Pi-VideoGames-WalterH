@@ -1,11 +1,21 @@
+@import url('https://fonts.cdnfonts.com/css/arcade-classic');
+/* Aplicar la fuente 'ArcadeClassic' a los elementos input y select */
+input, select {
+  font-family: 'ArcadeClassic', sans-serif;
+}
+button{font-family: 'ArcadeClassic', sans-serif;}
+
+
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'ArcadeClassic', sans-serif;
     background-image: url("https://i.pinimg.com/originals/f5/5b/0f/f55b0f3e0d9b878ed9192b8358fd1480.gif");
     background-size:cover;
     background-position: center;
-    background-repeat: no-repeat;}
+    background-repeat: no-repeat;
+   
+  }
 
 .landing-Page{
 
@@ -72,6 +82,7 @@ header {
   }
   
   .btn {
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,7 +113,7 @@ header {
   
   strong {
     z-index: 2;
-    font-family: 'Avalors Personal Use';
+    /* font-family: 'Avalors Personal Use'; */
     font-size: 12px;
     letter-spacing: 5px;
     color: #FFFFFF;

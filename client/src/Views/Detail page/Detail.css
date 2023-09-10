@@ -15,7 +15,7 @@
     margin: 10px;
     box-shadow: 0 0 12px #d7d7d7;
     padding: 1rem; /* Aumentamos el espacio interior */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     font-size: small; /* Cambiamos a "small" para mejorar la legibilidad */
   }
   

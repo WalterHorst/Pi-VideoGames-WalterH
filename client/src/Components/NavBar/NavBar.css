@@ -8,6 +8,9 @@
   /* Estilos de la NavBar */
   .NavBar {
     background-color:#268983c0; /* Color de fondo de la NavBar */
+    background-image: url("https://windowscustomization.com/wp-content/uploads/2019/03/Arcade.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     justify-content:space-around;
     align-items: center;

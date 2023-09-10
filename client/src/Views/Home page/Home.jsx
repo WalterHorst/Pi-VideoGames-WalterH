@@ -76,7 +76,9 @@ const Home = () => {
         >
           Prev
         </button>
-        {currentPage}/{totalPages}
+        <div className="page">
+          {currentPage}/{totalPages}
+        </div>
         <button
           className="botton-page"
           onClick={handleNextPage}

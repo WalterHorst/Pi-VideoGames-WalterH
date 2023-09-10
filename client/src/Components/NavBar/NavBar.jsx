@@ -48,7 +48,6 @@ const NavBar = () => {
       <Link to={"/home"}>Home</Link>
       <Search></Search>
       <Link to={"/create"}>Crear</Link>
-      <Link to={"/"}>Salir</Link>
       <button type="button" onClick={cleaner}>
         Limpiar filtros
       </button>
@@ -85,6 +84,7 @@ const NavBar = () => {
         <option value="API">Origen en API</option>
         <option value="DB">Origen en base de datos</option>
       </select>
+      <Link to={"/"}>Salir</Link>
     </div>
   );
 };

@@ -11,7 +11,11 @@ GET http://localhost:3001/videogames
 
 ###
 
-GET http://localhost:3001/videogames/2ca0b56d-5041-4f8d-af7a-9c1d588c57b8
+GET http://localhost:3001/videogames/58fb0c28-2c31-4c1e-8a51-be8701674384
+
+###
+
+DELETE http://localhost:3001/delete/a968b16c-4509-461e-a6d3-da9c52055cc6
 
 ###
 

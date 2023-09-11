@@ -22,3 +22,14 @@ img {
   text-decoration: none;
   color: inherit;
 }
+
+.Card button {
+  position: absolute;
+  align-self: flex-end ;/* Coloca el botón al final (esquina inferior derecha) */
+  background-color:transparent;
+  color: white;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+

@@ -11,10 +11,12 @@ export const FILTER_CLEANER = "FILTER_CLEANER";
 
 export const getVideogames = () => {
   return async (dispatch) => {
-    const { data } = await axios.get("http://localhost:3001/videogames");
-
-    const apiVideogames = data;
-    dispatch({ type: GET_VIDEOGAMES, payload: apiVideogames });
+    try {
+      const { data } = await axios.get("http://localhost:3001/videogames");
+      dispatch({ type: GET_VIDEOGAMES, payload: data });
+    } catch (error) {
+      console.error("Error al obtener los videojuegos:", error);
+    }
   };
 };
 

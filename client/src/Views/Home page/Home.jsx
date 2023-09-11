@@ -19,7 +19,7 @@ const Home = () => {
       dispatch(getVideogames());
     }
     dispatch(getGenres());
-  }, []);
+  }, [videogames]);
 
   // Función para obtener los games de la página actual
   const getCurrentVideogames = () => {

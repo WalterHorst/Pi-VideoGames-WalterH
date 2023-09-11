@@ -5,6 +5,7 @@ const {
   getGenres,
   getVideogames,
   newVideogame,
+  deleteById,
 } = require("../controllers/index");
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
@@ -18,5 +19,6 @@ router.get("/videogames/:id", getByID);
 router.get("/videogamesname", getByName);
 router.post("/videogames", newVideogame);
 router.get("/genres", getGenres);
+router.delete("/delete/:id", deleteById);
 
 module.exports = router;

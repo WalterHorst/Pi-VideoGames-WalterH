@@ -38,7 +38,7 @@ const reducer = (state = initialState, { type, payload }) => {
       const videogamesSortedByNumber = copy2.sort((a, b) => {
         const valueA = a.rating;
         const valueB = b.rating;
-        if (payload === ">") {
+        if (payload === "<") {
           return valueA - valueB;
         } else {
           return valueB - valueA;

@@ -68,7 +68,6 @@ const Form = () => {
   //funcion que previene el comportamiento default del submit (recargado de pagina) y hace la peticion post al backend
   const submitHandler = (event) => {
     event.preventDefault();
-    dispatch(getVideogames());
 
     axios
       .post("http://localhost:3001/videogames", form)
@@ -82,6 +81,7 @@ const Form = () => {
       Plataformas: "",
       FechaLanzamiento: "",
     });
+    dispatch(getVideogames());
   };
 
   return (

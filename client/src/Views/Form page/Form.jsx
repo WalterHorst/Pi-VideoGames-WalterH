@@ -14,7 +14,7 @@ const Form = () => {
     Rating: "",
     Plataformas: "",
     FechaLanzamiento: "",
-    Imagen: null,
+    Imagen: "",
     Genero: [],
   });
 
@@ -72,6 +72,7 @@ const Form = () => {
     axios
       .post("http://localhost:3001/videogames", form)
       .then((res) => alert("Videogame creado exitosamente!"))
+      .then((res) => dispatch(getVideogames()))
       .catch((error) => alert(error));
 
     setForm({
@@ -81,7 +82,6 @@ const Form = () => {
       Plataformas: "",
       FechaLanzamiento: "",
     });
-    dispatch(getVideogames());
   };
 
   return (
@@ -153,7 +153,7 @@ const Form = () => {
         ))}
       </div>
       <div>
-        <input type="file" name="Imagen" onChange={setFile}></input>
+        <input type="text" name="Imagen" onChange={changeHandler}></input>
         {form.Imagen && (
           <img src={form.Imagen} alt={form.Nombre} className="imagePreview" />
         )}

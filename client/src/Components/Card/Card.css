@@ -24,7 +24,7 @@ img {
 }
 
 .Card button {
-  position: absolute;
+  position:relative;
   align-self: flex-end ;/* Coloca el botón al final (esquina inferior derecha) */
   background-color:transparent;
   color: white;

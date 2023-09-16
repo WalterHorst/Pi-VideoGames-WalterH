@@ -12,7 +12,9 @@ export const FILTER_CLEANER = "FILTER_CLEANER";
 export const getVideogames = () => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get("http://localhost:3001/videogames");
+      const { data } = await axios.get(
+        "https://deploy-pi-videogame.onrender.com/videogames"
+      );
       dispatch({ type: GET_VIDEOGAMES, payload: data });
     } catch (error) {
       console.error("Error al obtener los videojuegos:", error);
@@ -26,7 +28,9 @@ export const searchVideogame = (data) => {
 
 export const getGenres = () => {
   return async (dispatch) => {
-    const { data } = await axios.get("http://localhost:3001/genres");
+    const { data } = await axios.get(
+      "https://deploy-pi-videogame.onrender.com/genres"
+    );
 
     const apiGenres = data;
     dispatch({ type: GET_GENRES, payload: apiGenres });

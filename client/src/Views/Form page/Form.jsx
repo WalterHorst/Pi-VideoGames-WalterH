@@ -70,7 +70,7 @@ const Form = () => {
     event.preventDefault();
 
     axios
-      .post("http://localhost:3001/videogames", form)
+      .post("https://deploy-pi-videogame.onrender.com/videogames", form)
       .then((res) => alert("Videogame creado exitosamente!"))
       .then((res) => dispatch(getVideogames()))
       .catch((error) => alert(error));

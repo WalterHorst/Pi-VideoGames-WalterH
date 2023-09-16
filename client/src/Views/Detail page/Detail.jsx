@@ -11,7 +11,7 @@ const Detail = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/videogames/${id}`)
+      .get(`https://deploy-pi-videogame.onrender.com/videogames/${id}`)
       .then(({ data }) => {
         setVideogame(data);
       })

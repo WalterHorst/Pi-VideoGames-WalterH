@@ -9,7 +9,7 @@ const Card = ({ Rating, id, image, nombre, genre }) => {
 
   const deleteHandler = () => {
     axios
-      .delete(`http://localhost:3001/delete/${id}`)
+      .delete(`https://deploy-pi-videogame.onrender.com/delete/${id}`)
       .then((res) => alert(res.data))
       .then((res) => dispatch(getVideogames()))
       .catch((error) => alert(error.data));

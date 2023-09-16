@@ -9,6 +9,7 @@ form {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   padding-right: 40px; /* Agregamos un poco de espacio interno al formulario */
+  overflow-y: auto; 
 }
 
 .container {

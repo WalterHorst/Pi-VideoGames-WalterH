@@ -14,15 +14,15 @@ const Form = () => {
     Rating: "",
     Plataformas: "",
     FechaLanzamiento: "",
-    Imagen: "",
+    Imagen: null,
     Genero: [],
   });
 
   const [errors, setErrors] = useState({
-    Nombre: "",
-    Descripcion: "",
-    Rating: "",
-    Plataformas: "",
+    Nombre: "El nombre del videogame no puede estar vacío.",
+    Descripcion: "Este campo no puede estar vacío.",
+    Rating: "El valor de Rating debe ser un número entre 1 y 10.",
+    Plataformas: "Este campo no puede estar vacío.",
     FechaLanzamiento: "",
   });
 
@@ -153,7 +153,7 @@ const Form = () => {
         ))}
       </div>
       <div>
-        <input type="text" name="Imagen" onChange={changeHandler}></input>
+        <input type="file" name="Imagen" onChange={setFile}></input>
         {form.Imagen && (
           <img src={form.Imagen} alt={form.Nombre} className="imagePreview" />
         )}

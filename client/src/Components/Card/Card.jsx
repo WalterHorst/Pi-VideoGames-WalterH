@@ -4,7 +4,7 @@ import { getVideogames } from "../../Redux/Actions";
 import "./Card.css";
 import axios from "axios";
 
-const Card = ({ id, image, nombre, genre }) => {
+const Card = ({ Rating, id, image, nombre, genre }) => {
   const dispatch = useDispatch();
 
   const deleteHandler = () => {
@@ -20,6 +20,7 @@ const Card = ({ id, image, nombre, genre }) => {
       {isNaN(id) && <button onClick={deleteHandler}>❌</button>}
       <h3>{nombre}</h3>
       <p>Genero:{genre}</p>
+      <p>Rating: {Rating}</p>
       <NavLink to={`/detail/${id}`} className="CardLink">
         <img src={image} alt={nombre} />
       </NavLink>

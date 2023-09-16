@@ -7,6 +7,7 @@ const CardsContainer = ({ allVideogames }) => {
       {allVideogames.map((videogame) => {
         return (
           <Card
+            Rating={videogame.rating}
             key={videogame.id}
             id={videogame.id}
             image={videogame.image}
